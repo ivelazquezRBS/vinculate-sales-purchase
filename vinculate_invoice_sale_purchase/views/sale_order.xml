@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_order_formx" model="ir.ui.view">
+           <field name="name">Pedidos.view</field>
+           <field name="model">sale.order</field>
+           <field name="inherit_id" ref="sale.view_order_form"/>
+           <field name="arch" type="xml">
+              <xpath expr="//field[@name='order_line']/tree/field[@name='customer_lead']" position="after">
+                    <field name="invoice_lines"
+                           groups="vinculate_invoice_sale_purchase_jz.vinculate_invoice_sale_purchase"
+                           widget="many2many_tags" />
+              </xpath>
+               <xpath expr="//field[@name='payment_term_id']" position="after">
+                   <field name="invoice_vinculate_jz" groups="vinculate_invoice_sale_purchase_jz.vinculate_invoice_sale_purchase"  />
+                   <button name="vinculate_sale_jz" string="Relate Invoice" class="oe_highlight"
+                           type="object" groups="vinculate_invoice_sale_purchase_jz.vinculate_invoice_sale_purchase" />
+                   <button name="des_vinculate_sale_jz" string="Unrelate Invoice" class="oe_highlight"
+                           type="object" groups="vinculate_invoice_sale_purchase_jz.vinculate_invoice_sale_purchase" />
+
+               </xpath>
+
+           </field>
+    </record>
+</odoo>

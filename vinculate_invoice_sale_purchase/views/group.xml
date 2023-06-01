@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="vinculate_invoice_sale_purchase" model="res.groups">
+			<field name="name">Vinculate Invoice Sale-Purchse</field>
+			<field name="category_id" ref="base.module_category_hidden"/>
+		</record>
+	</data>
+</odoo>
